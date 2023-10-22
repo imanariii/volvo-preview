@@ -1,0 +1,50 @@
+.wrapper {
+    background: rgb(142 178 193);
+    display: flex;
+    gap: 20px;
+    font-family: Roboto, sans-serif;
+    padding: 30px 10px 10px 10px;
+    flex-direction: column;
+    width: min-content;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    right: 0;
+    top: 200px;
+    z-index: 3;
+    transform-origin: 0 0;
+    transform: scale(0);
+    transition: transform 0.3s;
+}
+
+.title {
+    color: white;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    width: 230px;
+    line-height: normal;
+}
+
+.description {
+    color: white;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    width: 150px;
+}
+
+.button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    flex-shrink: 0;
+    background: black;
+    color: rgb(142 178 193);
+    width: 124px;
+    height: 20px;
+    padding: 16px;
+    border: none;
+}

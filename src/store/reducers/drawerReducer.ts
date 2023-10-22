@@ -1,7 +1,7 @@
 import {DrawerAction, DrawerActionTypes, DrawerState} from "../../types/drawer.ts";
 
 const initialState:DrawerState = {
-    isShow: true,
+    isShow: false,
     step: 0,
     error: null
 }

@@ -9,6 +9,7 @@ export const setShowDrawer = (show: boolean) => {
                 payload: show
             })
         } catch (e) {
+            console.log(e)
             dispatch({type: DrawerActionTypes.ERROR, payload: "Ошибка при открытии/закрытии окна"})
         }
     }
@@ -31,5 +32,27 @@ export const editStepDrawer = (step: number) => {
         } catch (e) {
             dispatch({type: DrawerActionTypes.ERROR, payload: "Ошибка при открытии/закрытии модального окна информации"})
         }
+    }
+}
+
+export const createError = (message: string) => {
+    return async (dispatch: Dispatch<DrawerAction>) => {
+        dispatch({
+            type: DrawerActionTypes.ERROR,
+            payload: message
+        })
+    }
+}
+
+export const closeDrawer = (step: number) => {
+    return async (dispatch: Dispatch<DrawerAction>) => {
+        dispatch({
+            type: DrawerActionTypes.EDIT_STEP,
+            payload: step
+        })
+        dispatch({
+            type: DrawerActionTypes.SET_DRAWER_FORM,
+            payload: false
+        })
     }
 }
