@@ -1,4 +1,4 @@
-import React, {FC, SetStateAction, Dispatch} from "react";
+import React, {FC} from "react";
 import styles from "./NumberButton.module.css";
 
 interface IProps {

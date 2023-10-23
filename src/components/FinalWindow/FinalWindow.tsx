@@ -1,10 +1,8 @@
 import {FC, useEffect} from "react";
-import {useTypedSelector} from "../../hooks/useTypedSelector.ts";
 import styles from "./FinalWindow.module.css";
 import { motion } from "framer-motion";
 import {useActions} from "../../hooks/useActions.ts";
 const FinalWindow:FC = () => {
-    const {isShow, step, error} = useTypedSelector(state => state.drawer)
     const {editStepDrawer} = useActions()
 
     useEffect(() => {

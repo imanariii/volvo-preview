@@ -161,3 +161,15 @@
 .btnImg:hover {
     background: transparent;
 }
+
+.error {
+    color: #EA0000;
+
+    text-align: center;
+    /* Text */
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    text-transform: uppercase;
+}
