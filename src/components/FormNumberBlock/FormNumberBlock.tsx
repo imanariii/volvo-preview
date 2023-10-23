@@ -8,7 +8,7 @@ import {focusable} from "tabbable";
 
 const FormNumberBlock:FC = () => {
     const [isAgree, setIsAgree] = useState(false)
-    const [validateNumber, setValidateNumber] = useState(true)
+    // const [validateNumber, setValidateNumber] = useState(true)
 
     // Импортируем экшены
     const {closeDrawer, editStepDrawer} = useActions()
@@ -37,7 +37,7 @@ const FormNumberBlock:FC = () => {
         })
 
         // Убираем статус ошибки
-        setValidateNumber(true)
+        // setValidateNumber(true)
     }
 
     const handleClickSubmitButton = () => {
@@ -133,7 +133,7 @@ const FormNumberBlock:FC = () => {
                                     animate={{ opacity: 1, x: '0' }}
                                     transition={{ duration: 1 }}>
                         <span className={styles.title}>Введите ваш номер мобильного телефона</span>
-                        <YourPhone nums={userPhone} error={validateNumber} />
+                        <YourPhone nums={userPhone} />
                         <span className={styles.subTitle}>и с вами свяжется наш менеджер для дальнейшей консультации</span>
                         <div className={styles.wrapperNumberButtons}>
                             {numbers.map(number => (
@@ -143,9 +143,9 @@ const FormNumberBlock:FC = () => {
                             <NumberButton number={0} key={`numberBtn-0`} clickNumber={writeNumber} />
                         </div>
 
-                        {validateNumber ? (
-                           <span className={styles.error}>Неверно введён номер</span>
-                        ) : (
+                        {/*{validateNumber ? (*/}
+                        {/*   <span className={styles.error}>Неверно введён номер</span>*/}
+                        {/*) : (*/}
                             <div className={styles.checkbox}>
                                 <button className={styles.btnImg} onClick={handleChangeIsAgree}>
                                     <div className={isAgree ? styles.isAgreeTrue : styles.isAgreeFalse}>
@@ -153,7 +153,7 @@ const FormNumberBlock:FC = () => {
                                 </button>
                                 <span>Согласие на обработку персональных данных</span>
                             </div>
-                        )}
+                        {/*)}*/}
                         <button className={styles.button} onClick={handleClickSubmitButton}>Подтвердить номер</button>
                     </motion.section>
 

@@ -2,13 +2,12 @@ import {FC} from "react";
 import styles from './YourPhone.module.css'
 
 interface IProps {
-    nums: number[] | null[],
-    error: boolean
+    nums: number[] | null[]
 }
 
-const YourPhone: FC<IProps> = ({nums, error}) => {
+const YourPhone: FC<IProps> = ({nums}) => {
     return (
-        <span className={styles.phone} style={!error ? {color: '#EA0000'} : {color: '#000'}}>+7
+        <span className={styles.phone}>+7
             (
             {nums[0]==0 ? '0' : nums[0] || '_'}
             {nums[1]==0 ? '0' : nums[1] || '_'}
