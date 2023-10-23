@@ -93,9 +93,20 @@
     text-transform: uppercase;
 }
 
-.button:focus {
-    background: black;
-    color: white;
+.backspaceNumberButton {
+    border: 2px solid black;
+    background: transparent;
+    padding: 12px 40px;
+
+    color: #000;
+
+    text-align: center;
+    /* Text */
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    text-transform: uppercase;
 }
 
 .qrcode {
@@ -140,4 +151,13 @@
 .close img {
     width: 90px;
     height: 60px;
+}
+
+.btnImg {
+    background: transparent;
+    border: none;
+}
+
+.btnImg:hover {
+    background: transparent;
 }

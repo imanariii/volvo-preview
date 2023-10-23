@@ -1,16 +1,13 @@
-import React, {FC} from "react";
+import React, {FC, SetStateAction, Dispatch} from "react";
 import styles from "./NumberButton.module.css";
 
 interface IProps {
     number: number,
-
+    clickNumber:  void
 }
-const NumberButton:FC<IProps> = ({number}) => {
-    const handleClickButton = (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
-        console.log(event.target)
-    }
+const NumberButton:FC<IProps> = ({number, clickNumber}) => {
     return (
-        <button className={styles.button} onClick={event => handleClickButton(event)}>
+        <button className={styles.button} onClick={() => clickNumber(number)}>
             {number}
         </button>
     )

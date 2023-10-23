@@ -1,8 +1,9 @@
-import {FC} from "react";
+import {FC, useEffect} from "react";
 import styles from './Welcome.module.css';
 import { motion } from "framer-motion";
 import {useTypedSelector} from "../../hooks/useTypedSelector.ts";
 import {useActions} from "../../hooks/useActions.ts";
+import {focusable} from "tabbable";
 
 const WelcomeBlock:FC = () => {
     const {isShow, step, error} = useTypedSelector(state => state.drawer)
@@ -11,6 +12,42 @@ const WelcomeBlock:FC = () => {
     const handleSubmitButton = () => {
         editStepDrawer(1)
     }
+
+    useEffect(() => {
+        let index = 0
+        const onKeyDown = (event: KeyboardEvent) => {
+            const arr = focusable(document.body)
+
+            if(event.key == 'ArrowRight') {
+                if(arr) {
+                    if(index < arr.length-1) {
+                        index++
+                    } else {
+                        index=0
+                    }
+                    arr[index].focus()
+                }
+            }
+            if(event.key == 'ArrowLeft') {
+                if (arr) {
+                    if(index > 0) {
+                        index--
+                    } else {
+                        if (arr) {
+                            index=arr.length-1
+                        }
+                    }
+                    arr[index].focus()
+                }
+            }
+        }
+
+        document.addEventListener('keydown', onKeyDown);
+
+        return () => {
+            document.removeEventListener('keydown', onKeyDown);
+        };
+    }, [])
     return (
         <>
         {isShow && step == 0 && error == null && (

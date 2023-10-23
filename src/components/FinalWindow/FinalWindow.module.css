@@ -1,0 +1,39 @@
+.wrapper {
+    height: 100vh;
+    width: 330px;
+    background: rgb(142 178 193);
+    position: fixed;
+    font-family: Roboto, sans-serif;
+    left: 0;
+    top: 0;
+
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 13px;
+    padding: 40px 24px;
+}
+
+.title {
+    color: #000;
+
+    text-align: center;
+    /* Tel Number */
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    text-transform: uppercase;
+}
+
+.subtitle {
+    color: #000;
+
+    text-align: center;
+    /* Sub text */
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}

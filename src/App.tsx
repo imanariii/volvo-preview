@@ -1,4 +1,3 @@
-import './App.css'
 import video from './assets/preview.mp4'
 import WelcomeBlock from "./components/WelcomeBlock/WelcomeBlock.tsx";
 import {useActions} from "./hooks/useActions.ts";
@@ -6,10 +5,11 @@ import { useEffect, useRef} from "react";
 import FormNumberBlock from "./components/FormNumberBlock/FormNumberBlock.tsx";
 import ErrorBlock from "./components/ErrorBlock/ErrorBlock.tsx";
 import {useTypedSelector} from "./hooks/useTypedSelector.ts";
+import FinalWindow from "./components/FinalWindow/FinalWindow.tsx";
 function App() {
     const videoRef = useRef<HTMLVideoElement>(null)
     const {setShowDrawer, editStepDrawer}  = useActions()
-    const { step } = useTypedSelector(state => state.drawer)
+    const { step, isShow } = useTypedSelector(state => state.drawer)
 
     useEffect(() => {
         setTimeout(() => {
@@ -27,6 +27,9 @@ function App() {
                 videoRef.current?.pause()
             }, 10000)
         }
+        if (step == 3) {
+            videoRef.current?.play()
+        }
     }, [step])
     return (
         <>
@@ -34,7 +37,8 @@ function App() {
                 <source src={video} type="video/mp4" />
             </video>
             <WelcomeBlock />
-            <FormNumberBlock />
+            {step == 1 && isShow && <FormNumberBlock />}
+            {step == 2 && isShow && <FinalWindow />}
             <ErrorBlock />
         </>
     )

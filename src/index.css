@@ -13,3 +13,9 @@ body {
 body * {
   box-sizing: border-box;
 }
+
+body button:hover {
+  cursor: pointer;
+  color: white;
+  background: black;
+}
